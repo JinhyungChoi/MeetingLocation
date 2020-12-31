@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.meetinglocation">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--구글 맵 현재 위치 마커 표시-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_foreground_meeting"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <!--구글 맵 API Key-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCOQWzdRUsvgcFfM1BbD1U3B401zsL1_AQ"/>
+
+        <!-- 스플래쉬 액티비티 -->
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="fullSensor">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".LoginActivity"
+            android:noHistory="true">
+
+        </activity>
+
+
+        <!-- EditText 키보드 자동 활성화 off -->
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Pop"
+            android:theme = "@style/AppTheme.Pop" />
+        <activity android:name=".PopModify"
+            android:theme="@style/AppTheme.Pop"/>
+        <activity android:name=".PopModify1Tab"
+            android:theme="@style/AppTheme.Pop"/>
+        <activity android:name=".ShareActivity"
+            android:theme="@style/AppTheme.Share"/>
+        <activity android:name=".DetailInfo"
+            android:theme="@style/AppTheme.Share"/>
+
+
+    </application>
+
+</manifest>
